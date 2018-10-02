@@ -1,7 +1,9 @@
 .container {
     margin: 40px auto;
     position: relative;
-
+}
+.logo {
+    padding-top: 15px;
 }
 h3 {
     margin-top: 30px;
@@ -38,6 +40,9 @@ h3 {
 .social {
     position: absolute;
     bottom: 0;
+}
+textarea:focus, input:focus{
+    outline: none;
 }
 
 @media only screen and (max-width: 768px) {

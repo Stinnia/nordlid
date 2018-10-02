@@ -14,7 +14,9 @@
             // form validering
             // custom language object
             var myErrorFeedback = {
-                badInt: 'UPS! Du mangler at udfylde noget.'
+                badInt: 'UPS! Du mangler at udfylde noget.',
+                badEmail: 'UPS! Du mangler at udfylde noget.',
+                badAlphaNumeric: 'UPS! Du mangler at udfylde noget.'
             }
             // formvalidator setup function
             $.validate({
@@ -60,8 +62,8 @@
 </head>
 
 <body>
-        <div class="col-md-2 offset-md-1"><img src="images/logo.jpg" class="logo" alt="nordlid"></div>
-   <!-- Image slider -->
+    <div class="col-md-2 offset-md-2"><img src="images/logo.jpg" class="logo" alt="nordlid"></div>
+    <!-- Image slider -->
     <div id="demo1">
         <div class="slide">
             <img src="images/1.jpg" alt="Nordlid" />
@@ -84,7 +86,7 @@
                 </div>
             </div>
             <div class="row">
-               <!-- Reordering when responsive -->
+                <!-- Reordering when responsive -->
                 <div class="order-2 order-md-1 col-sm order-last">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quos neque reprehenderit fugiat consectetur facere, reiciendis quidem atque natus ipsa velit odio officia sapiente labore excepturi vitae qui nesciunt. Pariatur iure porro at corporis itaque doloremque magni voluptatem, eius, quasi nulla voluptatum deleniti perferendis modi ducimus, fuga nihil minima! Provident.</p>
 
@@ -94,30 +96,36 @@
                 <div class="order-1 order-md-2 col-sm order-first">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto vero consequuntur saepe ipsam aliquid? Tempore mollitia soluta, eius minus itaque, maxime nostrum fuga. Eum, unde, eveniet. Nam sint possimus beatae ea ad molestiae magnam.</p>
                     <br>
+                    <div id="myForm">
                     <form action="https://s2331.t.eloqua.com/e/f2" method="post">
-                       <!-- Hidden fields -->
+                        <!-- Hidden fields -->
                         <input type="hidden" name="elqFormName" value="giv-mig-praktikplads">
                         <input type="hidden" name="elqSiteID" value="2331">
                         <!-- Visible fields-->
-                        <input type="text" class="form-control border-info border-bottom rounded-0" name="fullName" placeholder="Navn" data-validation="required" data-validation-error-msg-container="#error-dialog">
+                        <input type="text" class="form-control border-info border-bottom rounded-0" name="fullName" placeholder="Navn" data-validation="alphanumeric" data-validation-error-msg-container="#error-dialog">
                         <!-- Error message -->
                         <div id="error-dialog" class="mt-3"></div>
 
-                        <input type="email" class="form-control border-info border-bottom rounded-0" name="emailAddress" placeholder="Email" data-validation="email" data-validation-error-msg-container="#error-dialog">
-                        <input type="tel" class="form-control border-info border-bottom rounded-0" name="mobilePhone" placeholder="Tlf" data-validation="number" data-validation-error-msg-container="#error-dialog">
-                        <div class="form-group form-check">
-                            <input type="checkbox" name="permission" value="permission" class="form-check-input" id="form-check" required> <label class="form-check-label" for="form-check">
-                                <small>Jeg giver hermed tilladelse til, at Nordlid må gemme og bruge min data til interne projekter. Jeg kan til hver en tid tilbagekalde min accept.</small></label><br>
+                        <input type="email" class="form-control border-info border-bottom rounded-0" name="emailAddress" placeholder="Email" data-validation="email" data-validation-error-msg-container="#error-dialog2">
+                        <div id="error-dialog2" class="mt-3"></div>
+                        
+                        <input type="tel" class="form-control border-info border-bottom rounded-0" name="mobilePhone" placeholder="Tlf" data-validation="number" data-validation-error-msg-container="#error-dialog3">
+                        <div id="error-dialog3" class="mt-3"></div>
+                        
+                        <div id="form-group form-check">
+                            <input type="checkbox" name="permission" value="permission" class="form-check-input" id="form-check"> <label class="form-check-label" for="form-check">
+                                Jeg giver hermed tilladelse til, at Nordlid må gemme og bruge min data til interne projekter. Jeg kan til hver en tid tilbagekalde min accept.</label><br>
                         </div>
                         <input type="submit" class="btn btn-primary" name="Submit" value="SEND">
 
                     </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    
-<!-- Footer area -->
+
+    <!-- Footer area -->
     <div class="top-footer">
         <div class="row">
             <div class="col col-image hide"></div>
@@ -152,7 +160,21 @@
         </div>
     </div>
 
+<script>
+    // Get the container element
+var btnContainer = document.getElementById("myForm");
 
+// Get all buttons with class="btn" inside the container
+var formctrl = btnContainer.getElementsByClassName("form-control");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < formctrl.length; i++) {
+  formctrl[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}</script>
 
 </body>
 
