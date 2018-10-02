@@ -1,0 +1,34 @@
+.form-control{
+    border: none;
+    transition: none;
+    padding: 0;
+}
+::placeholder {
+    font-weight: 400;
+    font-size: 10px;
+    margin: 0;
+}
+.container input#form-check {
+  position: absolute;
+  top: 15px;
+  height: 30px;
+  width: 30px;
+  outline: black 1px solid;
+    -moz-appearance:none;
+-webkit-appearance:none;
+-o-appearance:none;
+    &:checked {
+        background-color: #e6007e;
+    }
+}
+
+
+.form-check-label {
+    margin: 13px 15px 0 18px; 
+    font-size: 14px;
+}
+.checkmark:checked {
+    height: 30px;
+    width: 30px;
+    color: pink;
+}

@@ -1,0 +1,89 @@
+.container {
+    margin: 40px auto;
+    position: relative;
+
+}
+h3 {
+    margin-top: 30px;
+}
+.col {
+    margin: 20px auto;
+}
+
+.col-md-2.offset-md-1 {
+    margin-top: 10px;
+}
+.top-footer {
+    background-color: #2a697b;
+    height: 400px;
+    width: 100%;
+}
+
+.image {
+    display: block;
+    margin: 50px auto 25px auto;
+}
+
+.bottom-footer {
+    background-color: #313131;
+    height: au;
+    width: 100%;
+    position: relative;
+}
+
+.contact {
+    margin-right: 20px;
+}
+
+.social {
+    position: absolute;
+    bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+    h3 {
+        font-size: 20px;
+    }
+    .col {
+        margin: 0;
+    }
+    .col-image {
+        margin: 0;
+        display: block;
+        width: 100%;
+    }
+   
+    .row {
+        position: relative;
+    }
+
+    .row .row {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .top-footer {
+        height: auto;
+    }
+
+    .bottom-footer {
+        height: auto;
+    }
+  
+    .social {
+        position: relative;
+    }
+    
+}
+
